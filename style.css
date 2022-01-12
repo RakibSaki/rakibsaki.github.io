@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+
+ul {
+    list-style-type: none;
+}
+
+nav {
+    height: 80px;
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    z-index: 5;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Home */
+
+main {
+    width: 100%;
+    padding-top: 80px;
+}
+
+section {
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#home .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#home .image {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    left: 40%;
+    background-image: url("./images/IMG_20210802_233528.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
+    clip-path: path("M 10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
+}
+
+/* Projects */
+
+#projects .heading, #skills .heading, #contact .heading {
+    width: 400px;
+    border: 1px solid black;
+}
+
+article {
+    border: double black 3px;
+    width: 40%;
+}
+
+article ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Skills */
+
+#skills > h3 {
+    width: 100%;
+}
+
+#skills > ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+/* Contact */
+
+#contact h2, #contact h3 {
+    width: 100%;
+}
+
+input {
+    display: inline-block;
+}
+
+/* Footer */
+
+footer {
+    font-size: small;
+}
