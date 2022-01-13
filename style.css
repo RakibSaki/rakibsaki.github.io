@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+/* Colors */
+
+:root {
+    --yellow: #F5C54C;
+    --light-yellow: #F5D276;
+    --blue: #5D85F5;
+    --magenta: #F56999;
+    --lime: #8EF597;
+    --yellow-O: rgba(241, 195, 76, 0.125);
+    --light-yellow-O: rgba(245, 210, 118, 0.125);
+    --blue-O: rgba(93, 133, 245, 0.125);
+    --magenta-O: rgba(245, 105, 153, 0.125);
+    --lime-O: rgba(142, 245, 151, 0.125);
+}
+
 /* Navigation */
 
 ul {
@@ -12,13 +27,13 @@ ul {
 
 nav {
     height: 80px;
-    position: fixed;
+    position: sticky;
     top: 0;
     border-bottom: 2px solid black;
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: var(--light-yellow);
     z-index: 5;
 }
 
@@ -51,6 +66,8 @@ a, a:visited {
     z-index: 10;
     font-size: xx-large;
     text-align: center;
+    border-radius: 15px;
+    border: coral solid 3px;
 }
 
 #alert-button {
@@ -58,6 +75,10 @@ a, a:visited {
     color: brown;
     border-radius: 5px;
     font-size: larger;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
 @keyframes appear {
@@ -80,7 +101,6 @@ a, a:visited {
 
 main {
     width: 100%;
-    padding-top: 80px;
 }
 
 section {
@@ -92,6 +112,27 @@ section {
     align-content: center;
     flex-wrap: wrap;
     padding: 0 2rem;
+    border-top: 1px solid black;
+    /* background: conic-gradient(from 90deg at var(--scrollX) 0%, var(--back-color-1) 0%, var(--back-color-2) 50%, rgba(228, 162, 40, var(--section-back-opacity))),
+                conic-gradient(from -90deg at var(--scrollX) 100%, var(--back-color-3) 100%, var(--back-color-4) 50%, rgba(228, 131, 40, var(--section-back-opacity))); */
+    /* background-blend-mode: soft-light; */
+}
+
+:root {
+    --section-back-opacity: 0.2;
+    
+    --back-color-1: rgba(228, 162, 40, var(--section-back-opacity));
+    --back-color-2: rgba(0, 136, 255, var(--section-back-opacity));
+    --back-color-3: rgba(228, 131, 40, var(--section-back-opacity));
+    --back-color-4: rgba(228, 131, 40, var(--section-back-opacity));
+}
+
+#home {
+    --scrollX: 50%;
+    --back-color-1: var(--blue-O);
+    --back-color-2: var(--light-yellow-O);
+    --back-color-3: var(--blue-O);
+    --back-color-4: var(--light-yellow-O);
 }
 
 #home .heading {
@@ -102,11 +143,20 @@ section {
     align-items: center;
 }
 
+#home .heading div {
+    width: 25%;
+    text-align: center;
+}
+
+:root {
+    --face-width: 20vw;
+}
+
 #home .image {
     position: absolute;
-    width: 20vw;
+    width: var(--face-width);
     height: 60vh;
-    left: 40%;
+    left: calc(50% - (var(--face-width) / 2));
     background-image: url("./images/IMG_20210802_233528.jpg");
     background-size: cover;
     background-position: center;
@@ -119,7 +169,7 @@ section {
     --inside-border: 9px;
     border: whitesmoke var(--inside-border) double;
     display: block;
-    width: calc(20vw - (var(--outside-border) * 2));
+    width: calc(var(--face-width) - (var(--outside-border) * 2));
     height: calc(60vh - (var(--outside-border) * 2));
     transform: translate(var(--outside-border), var(--outside-border));
     box-sizing: border-box;
@@ -131,7 +181,7 @@ section {
     --outside-border: 5px;
     border: whitesmoke var(--outside-border) solid;
     display: block;
-    width: calc(20vw + (var(--outside-border) * 2));
+    width: calc(var(--face-width) + (var(--outside-border) * 2));
     height: calc(60vh + (var(--outside-border) * 2));
     transform: translate(calc(-1 * var(--outside-border)), calc(-1 * var(--outside-border)));
     box-sizing: border-box;
@@ -144,6 +194,14 @@ section {
 #projects .heading, #skills .heading, #contact .heading {
     width: 400px;
     border: 1px solid black;
+}
+
+#projects {
+    --scrollX: 0%;
+    --back-color-1: var(--light-yellow-O);
+    --back-color-2: var(--magenta-O);
+    --back-color-3: var(--light-yellow-O);
+    --back-color-4: var(--magenta-O);
 }
 
 article {
@@ -159,6 +217,14 @@ article ul {
 
 /* Skills */
 
+#skills {
+    --scrollX: 0%;
+    --back-color-1: var(--blue-O);
+    --back-color-2: var(--lime-O);
+    --back-color-3: var(--blue-O);
+    --back-color-4: var(--lime-O);
+}
+
 #skills > h3 {
     width: 100%;
 }
@@ -170,6 +236,13 @@ article ul {
 }
 
 /* Contact */
+
+#contact {
+    --back-color-1: var(--lime-O);
+    --back-color-2: var(--yellow-O);
+    --back-color-3: var(--lime-O);
+    --back-color-4: var(--yellow-O);
+}
 
 #contact h2, #contact h3 {
     width: 100%;
