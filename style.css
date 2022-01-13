@@ -35,6 +35,49 @@ a, a:visited {
 
 /* Home */
 
+.alert {
+    position: fixed;
+    top: 30%;
+    width: 60%;
+    height: 50vh;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: oblique;
+    flex-direction: column;
+    opacity: 0;
+    background: radial-gradient(at 50% 75%, white, wheat);
+    z-index: 10;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#alert-button {
+    background-color: aqua;
+    color: brown;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 main {
     width: 100%;
     padding-top: 80px;
@@ -74,7 +117,7 @@ section {
     content: "";
     --outside-border: 3px;
     --inside-border: 9px;
-    border: wheat var(--inside-border) double;
+    border: whitesmoke var(--inside-border) double;
     display: block;
     width: calc(20vw - (var(--outside-border) * 2));
     height: calc(60vh - (var(--outside-border) * 2));
@@ -86,7 +129,7 @@ section {
     content: "";
     position: absolute;
     --outside-border: 5px;
-    border: wheat var(--outside-border) solid;
+    border: whitesmoke var(--outside-border) solid;
     display: block;
     width: calc(20vw + (var(--outside-border) * 2));
     height: calc(60vh + (var(--outside-border) * 2));
