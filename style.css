@@ -60,14 +60,39 @@ section {
 
 #home .image {
     position: absolute;
-    width: 20%;
-    height: 60%;
+    width: 20vw;
+    height: 60vh;
     left: 40%;
     background-image: url("./images/IMG_20210802_233528.jpg");
     background-size: cover;
     background-position: center;
-    border: 1px solid black;
-    clip-path: path("M 10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
+    background-repeat: no-repeat;
+}
+
+#home .image::after {
+    content: "";
+    --outside-border: 3px;
+    --inside-border: 9px;
+    border: wheat var(--inside-border) double;
+    display: block;
+    width: calc(20vw - (var(--outside-border) * 2));
+    height: calc(60vh - (var(--outside-border) * 2));
+    transform: translate(var(--outside-border), var(--outside-border));
+    box-sizing: border-box;
+}
+
+#home .image::before {
+    content: "";
+    position: absolute;
+    --outside-border: 5px;
+    border: wheat var(--outside-border) solid;
+    display: block;
+    width: calc(20vw + (var(--outside-border) * 2));
+    height: calc(60vh + (var(--outside-border) * 2));
+    transform: translate(calc(-1 * var(--outside-border)), calc(-1 * var(--outside-border)));
+    box-sizing: border-box;
+    background: conic-gradient(from -180deg at 100% 90%, rgb(100 73 51) 0deg, rgb(149 165 177) 180deg);
+    mix-blend-mode: hard-light;
 }
 
 /* Projects */
