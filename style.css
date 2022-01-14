@@ -108,15 +108,18 @@ main {
     width: 100%;
 }
 
+:root {
+    --secition-height: calc(100vh - 80px);
+}
+
 section {
-    height: calc(100vh - 80px);
+    height: var(--secition-height);
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    padding: 0 2rem;
     border-top: 1px solid black;
     /* background: conic-gradient(from 90deg at var(--scrollX) 0%, var(--back-color-1) 0%, var(--back-color-2) 50%, rgba(228, 162, 40, var(--section-back-opacity))),
                 conic-gradient(from -90deg at var(--scrollX) 100%, var(--back-color-3) 100%, var(--back-color-4) 50%, rgba(228, 131, 40, var(--section-back-opacity))); */
@@ -124,7 +127,8 @@ section {
 }
 
 h2 {
-    font-family: bold-font;
+    font-family: elegant-font;
+    font-size: 3vw;
 }
 
 :root {
@@ -147,27 +151,52 @@ h2 {
 #home .heading {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
 
+h1 {
+    font-size: 5vw;
+}
+
 #home .heading div {
-    width: 25%;
+    width: fit-content;
     text-align: center;
-    font-size: xx-large;
+}
+
+#web-dev-portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #web-dev {
     font-family: bold-font;
-    background-image: url('./images/vecteezy_internet-cyber-security-connection-concept-background_.jpg');
+    background-image: url('./images/invertedsmallsymmetrical-vecteezy_internet-cyber-security-connection-concept-background_\ -\ Copy.jpg');
     background-clip: text;
     -webkit-background-clip: text;
-    background-size: cover;
-    background-position: center;
+    background-size: 200px;
+    background-position-x: 10px;
+    width: min-content;
+    background-repeat: revert;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 7vw;
+    letter-spacing:10px;
     color: transparent;
+    background-blend-mode: soft-light;
+    animation: sliding-back 3s linear infinite;
+}
+
+@keyframes sliding-back {
+    0% {
+        background-position-x: 0;
+        background-position-y: 0;
+    }
+    100% {
+        background-position-x: 200px;
+        background-position-y: -114px;
+    }
 }
 
 #portfolio {
@@ -178,16 +207,20 @@ h2 {
 .name {
     font-family: elegant-font;
     color: var(--blue);
+    float: right;
 }
 
 :root {
     --face-width: 20vw;
+    --face-height: calc(1.5 * var(--face-width));
+    --face-max-height: calc(var(--secition-height) - 20px);
 }
 
 #home .image {
     position: absolute;
     width: var(--face-width);
-    height: 60vh;
+    height: var(--face-height);
+    max-height: calc(var(--secition-height));
     left: calc(50% - (var(--face-width) / 2));
     background-image: url("./images/IMG_20210802_233528.jpg");
     background-size: cover;
@@ -195,14 +228,37 @@ h2 {
     background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 900px) {
+    #home .image {
+        left: auto;
+        right: calc((50% - var(--face-width))/2);
+    }
+    #home .heading {
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-left: 10%;
+        padding-right: 50%;
+        height: var(--secition-height);
+    }
+    #web-dev-portfolio {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+    }
+    .name {
+        text-align: right !important;
+    }
+}
+
 #home .image::after {
     content: "";
     --outside-border: 3px;
     --inside-border: 9px;
-    border: whitesmoke var(--inside-border) double;
+    border: var(--light-yellow) var(--inside-border) double;
     display: block;
     width: calc(var(--face-width) - (var(--outside-border) * 2));
-    height: calc(60vh - (var(--outside-border) * 2));
+    height: calc(var(--face-height) - (var(--outside-border) * 2));
+    max-height: calc(var(--face-max-height) - (var(--outside-border) * 2));;
     transform: translate(var(--outside-border), var(--outside-border));
     box-sizing: border-box;
 }
@@ -211,21 +267,56 @@ h2 {
     content: "";
     position: absolute;
     --outside-border: 5px;
-    border: whitesmoke var(--outside-border) solid;
+    border: var(--light-yellow) var(--outside-border) solid;
     display: block;
     width: calc(var(--face-width) + (var(--outside-border) * 2));
-    height: calc(60vh + (var(--outside-border) * 2));
+    height: calc(var(--face-height) + (var(--outside-border) * 2));
+    max-height: calc(var(--face-max-height) + (var(--outside-border) * 2));
     transform: translate(calc(-1 * var(--outside-border)), calc(-1 * var(--outside-border)));
     box-sizing: border-box;
-    background: conic-gradient(from -180deg at 100% 90%, rgb(100 73 51) 0deg, rgb(149 165 177) 180deg);
-    mix-blend-mode: hard-light;
+    background: conic-gradient(from -180deg at 100% 90%, var(--light-yellow), var(--blue));
+    mix-blend-mode: soft-light;
 }
 
 /* Projects */
 
+#projects, #skills, #contact {
+    padding: 0 5%;
+    justify-content: space-between;
+    align-items: space-between;
+    align-content: space-evenly;
+}
+
 #projects .heading, #skills .heading, #contact .heading {
-    width: 400px;
-    border: 1px solid black;
+    width: 40vw;
+    text-align: center;
+    background: linear-gradient(45deg, transparent 0%, transparent 30%, var(--light-yellow) 30%, var(--light-yellow) 70%, transparent 70%);
+    background-repeat: repeat-x;
+    animation: skimming-back 3s ease-in-out 1s alternate infinite;
+    border-radius: 3vw;
+    z-index: -1;
+}
+
+@keyframes skimming-back {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 40vw;
+    }
+}
+
+#projects .heading h2::before, #skills .heading h2::before, #contact .heading h2::before {
+    content: attr(data-content);
+    font-size: 3vw;
+    transform: translate(3px, 3px);
+    color: var(--yellow);
+    position: absolute;
+    z-index: -1;
+}
+
+#projects .heading h2, #skills .heading h2, #contact .heading h2 {
+    z-index: 1;
 }
 
 #projects {
@@ -234,6 +325,10 @@ h2 {
     --back-color-2: var(--magenta-O);
     --back-color-3: var(--light-yellow-O);
     --back-color-4: var(--magenta-O);
+}
+
+#projects .heading {
+    color: var(--magenta);
 }
 
 article {
@@ -257,6 +352,10 @@ article ul {
     --back-color-4: var(--lime-O);
 }
 
+#skills .heading {
+    color: var(--blue);
+}
+
 #skills > h3 {
     width: 100%;
 }
@@ -274,6 +373,10 @@ article ul {
     --back-color-2: var(--yellow-O);
     --back-color-3: var(--lime-O);
     --back-color-4: var(--yellow-O);
+}
+
+#contact .heading {
+    color: var(--lime);
 }
 
 #contact h2, #contact h3 {
