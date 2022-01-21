@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: bluu, serif;
+    font-size: x-large;
+    padding: 1rem;
+}
+
+body {
+    background-image: url('bg.jpg');
+}
+button {
+    font-family: bluu_nexttitling;
+    font-size: xx-large;
+    color: goldenrod;
+}
+
+#duel {
+    margin: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 245, 0.541);
+    color: midnightblue;
+}
+
+#site {
+    font-style: italic;
+    /*background-color: rgba(102, 51, 153, 0.534);*/
+    color: indigo;
+}
+
+.incantation, .spell {
+    display: inline-block;
+}
+
+.spell {
+    font-family: bluu_nexttitling;
+}
+
+.spell-description {
+    position: absolute;
+    display: none;
+    padding: 0.5rem;
+    background-color: khaki;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: large;
+}
