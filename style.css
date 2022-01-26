@@ -17,7 +17,7 @@ body {
     --light-yellow: #F5D276;
     --blue: #5D85F5;
     --magenta: #F56999;
-    --lime: #8EF597;
+    --lime: #8ef597;
     --yellow-O: rgba(241, 195, 76, 0.125);
     --light-yellow-O: rgba(245, 210, 118, 0.125);
     --blue-O: rgba(93, 133, 245, 0.125);
@@ -59,11 +59,37 @@ a {
 
 :root {
     --main-height: calc(100vh - var(--nav-height));
+    --back-grid-spacing: 50px;
+    --back-grid-width: 1px;
+    --back-angle: 45deg;
+    --back-color: var(--light-yellow)
 }
 
 main {
     height: var(--main-height);
     overflow-y: scroll;
+    background-color: transparent;
+}
+
+section article {
+    background-color: white;
+}
+
+#back-black, #back-color {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+
+#back-black {
+    opacity: 0;
+    background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width)));
+}
+
+#back-color {
+    opacity: 1;
+    background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width)));
 }
 
 section {
@@ -247,10 +273,23 @@ section {
     text-align: center;
 }
 
+.quadruple article p {
+    font-size: 30px;
+    text-align: center;
+    color: var(--yellow);
+}
+
 .quadruple article ul {
     display: flex;
-    justify-content: stretch;
+    justify-content: space-evenly;
     list-style: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.quadruple article ul li {
+    text-align: center;
 }
 
 /* Projects */
