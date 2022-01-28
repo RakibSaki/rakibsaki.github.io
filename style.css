@@ -226,6 +226,10 @@ article p {
     border-radius: 20px;
     background-image: conic-gradient(at top left, transparent, var(--c-1) 100%);
     border: 1px solid var(--c-2);
+    width: 60%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input {
