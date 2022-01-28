@@ -89,9 +89,12 @@ article ul li span {
 }
 
 article h3 {
-    font-size: calc((1vw + 1vh) * 2);
     text-align: center;
     width: 100%;
+}
+
+h3, input {
+    font-size: calc((1vw + 1vh) * 2);
 }
 
 article p {
@@ -158,6 +161,69 @@ article p {
     max-height: 20vh;
     height: calc(100vw / 6);
     clear: both;
+}
+
+/* Contact */
+
+#contact {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+#contact > * {
+    padding: 0 5vw;
+}
+
+#contact .heading {
+    padding-left: 10vw;
+}
+
+/* #contact h3, #contact input {
+    font-size: 30px;
+} */
+
+#upwork, #fiverr {
+    width: 20vw;
+    max-width: 200px;
+    height: 10vh;
+    max-height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5vw;
+}
+
+#upwork {
+    background-image: url("./images/upwork.png");
+}
+
+#fiverr {
+    background-image: url("./images/fiverr.png");
+}
+
+#freelance-sites {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    justify-content: space-around;
+}
+
+#hire {
+    align-self: center;
+}
+
+#collaborate {
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* Footer */
+
+footer {
+    font-size: 20px;
+    padding-left: 10vw;
+    width: 100%;
+    background-color: gray;
 }
 
 /* Fonts */
