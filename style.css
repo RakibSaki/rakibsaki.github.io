@@ -57,7 +57,8 @@ section {
 
 article {
     flex: 300px 1 0;
-    height: calc(100vw / 5);
+    height: calc(100vw / 4);
+    min-height: calc(70vh / 4);
     max-height: 50vh;
     border: 1px solid black;
     margin: 0 1vw;
@@ -155,7 +156,7 @@ article p {
 #certifications {
     flex: calc(100% - 2vw) 0 0;
     max-height: 20vh;
-    height: min-content;
+    height: calc(100vw / 6);
     clear: both;
 }
 
