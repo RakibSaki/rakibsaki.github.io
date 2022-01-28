@@ -40,7 +40,7 @@ a {
 /* Sections */
 
 section {
-    padding-top: 80px;
+    padding-top: calc((1vw + 1vh) * 4);
     height: 100vh;
     display: flex;
     justify-content: space-evenly;
@@ -100,6 +100,10 @@ article p {
 }
 
 /* Home */
+
+#home {
+    align-items: center;
+}
 
 #home .image {
     background-image: url("./images/IMG_20210802_233528.jpg");
