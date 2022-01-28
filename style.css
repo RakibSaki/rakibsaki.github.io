@@ -13,16 +13,22 @@ body {
 /* Colors */
 
 :root {
+    --yellow-original: #F5C54C;
     --yellow: #F5C54C;
     --light-yellow: #F5D276;
     --blue: #5D85F5;
     --magenta: #F56999;
     --lime: #8ef597;
     --yellow-O: rgba(241, 195, 76, 0.125);
-    --light-yellow-O: rgba(245, 210, 118, 0.125);
+    --light-yellow-O: rgba(245, 209, 118, 0.589);
     --blue-O: rgba(93, 133, 245, 0.125);
     --magenta-O: rgba(245, 105, 153, 0.125);
     --lime-O: rgba(142, 245, 151, 0.125);
+    /* --light-yellow: #5cb5fa;
+    --yellow: #41aafa;
+    --blue: #FAB041;
+    --magenta: #FA73EE;
+    --lime: #7FFA4D */
 }
 
 /* Navigation */
@@ -60,9 +66,9 @@ a {
 :root {
     --main-height: calc(100vh - var(--nav-height));
     --back-grid-spacing: 50px;
-    --back-grid-width: 1px;
+    --back-grid-width: 4px;
     --back-angle: 45deg;
-    --back-color: var(--light-yellow)
+    --back-color: var(--yellow)
 }
 
 main {
@@ -83,13 +89,16 @@ section article {
 }
 
 #back-black {
-    opacity: 0;
-    background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width)));
+    opacity: 1;
+    background-color: honeydew;
+    /* background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), black var(--back-grid-spacing), black calc(var(--back-grid-spacing) + var(--back-grid-width))); */
 }
 
 #back-color {
     opacity: 1;
-    background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width)));
+    /* background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width))), repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), var(--back-color) var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + var(--back-grid-width))); */
+    background-image: repeating-linear-gradient(var(--back-angle), transparent, transparent var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + (var(--back-grid-width) / 2)), transparent calc(var(--back-grid-spacing) + var(--back-grid-width))),
+        repeating-linear-gradient(calc(var(--back-angle) + 90deg), transparent, transparent var(--back-grid-spacing), var(--back-color) calc(var(--back-grid-spacing) + (var(--back-grid-width) / 2)), transparent calc(var(--back-grid-spacing) + var(--back-grid-width)));
 }
 
 section {
@@ -121,7 +130,8 @@ section {
     background-position: center;
     border-bottom-left-radius: 5%;
     border-top-right-radius: 5%;
-    border: 4px solid var(--light-yellow);
+    border: 8px double var(--light-yellow);
+    background-repeat: no-repeat;
 }
 
 #home .image, #web-dev-portfolio, #name {
@@ -228,7 +238,7 @@ section {
 
 .quadruple {
     --shadow-w: 2px;
-    --shadow-f: 5px;
+    --shadow-f: 0px;
 }
 
 .quadruple .heading {
@@ -263,8 +273,10 @@ section {
 
 .quadruple .heading, #contact .heading {
     font-size: 50px;
-    color: var(--yellow);
+    color: var(--color);
     font-family: bold-font;
+    text-align: right;
+    justify-self: flex-end;
 }
 
 .quadruple article h3 {
@@ -276,7 +288,7 @@ section {
 .quadruple article p {
     font-size: 30px;
     text-align: center;
-    color: var(--yellow);
+    color: var(--color);
 }
 
 .quadruple article ul {
@@ -290,6 +302,19 @@ section {
 
 .quadruple article ul li {
     text-align: center;
+}
+
+.quadruple article:hover {
+    grid-row: 2 / 12;
+    z-index: 1;
+}
+
+.quadruple article {
+    z-index: 0;
+}
+
+.quadruple article {
+    transition: 800ms height ease-out 0s;
 }
 
 /* Projects */
