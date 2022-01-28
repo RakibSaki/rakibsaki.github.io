@@ -4,7 +4,156 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: main-font;
+    font-size: 18px;
+}
 
+/* Navigation */
+
+nav {
+    position: fixed;
+    background-color: white;
+    z-index: 5;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+nav ul {
+    width: 100%;
+    height: calc((1vw + 1vh) * 4);
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+/* Sections */
+
+section {
+    padding-top: 80px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.heading {
+    width: 100%;
+    font-size: 50px;
+    padding-left: 10vw;
+}
+
+article {
+    flex: 300px 1 0;
+    height: calc(100vw / 5);
+    max-height: 50vh;
+    border: 1px solid black;
+    margin: 0 1vw;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+article ul {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+article ul li {
+    flex: 100px 1 0;
+    color: gray;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: calc((1vw + 1vh) * 1.2);
+}
+
+article ul li span {
+    color: black;
+    margin-left: 1vw;
+}
+
+article h3 {
+    font-size: calc((1vw + 1vh) * 2);
+    text-align: center;
+    width: 100%;
+}
+
+article p {
+    font-size: calc((1vw + 1vh) * 1.5);
+    text-align: center;
+    width: 100%;
+}
+
+/* Home */
+
+#home .image {
+    background-image: url("./images/IMG_20210802_233528.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    width: 25%;
+    border-bottom-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+
+#home .image::before {
+    content: "";
+    background-image: radial-gradient(at bottom right, transparent 0, rgba(255, 255, 255, 0.1) 50%, white 100%);
+    height: 70vh;
+    width: 25%;
+    position: absolute;
+}
+
+#home .image::after {
+    content: "";
+    height: 70vh;
+    width: 25%;
+    border-bottom-left-radius: 5%;
+    border-top-right-radius: 5%;
+    position: absolute;
+    border: 5px black solid;
+}
+
+#home .heading {
+    font-size: 5vw;
+    line-height: 15vh;
+    width: auto;
+}
+
+#name {
+    font-family: elegant-font;
+}
+
+#web-dev {
+    letter-spacing: 1vw;
+    text-align: center;
+    font-family: bold-font;
+}
+
+/* Skills */
+
+#certifications {
+    flex: calc(100% - 2vw) 0 0;
+    max-height: 20vh;
+    height: min-content;
+    clear: both;
+}
 
 /* Fonts */
 
