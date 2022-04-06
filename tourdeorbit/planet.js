@@ -72,8 +72,8 @@ let planet = {
         rotate(this.phi)
         noFill()
         stroke(0, 0, 100)
-        for (point of this.path) {
-            circle(point[0], point[1], this.width / 10)
+        for (pointt of this.path) {
+            circle(pointt[0], pointt[1], this.width / 10)
         }
         translate(-this.atoe, 0)
         stroke(0, 0, 100, 30)
