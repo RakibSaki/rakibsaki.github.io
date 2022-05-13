@@ -4,6 +4,9 @@ let selected
 let mouseOnAtom = false
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('touchend', () => {
+        mouseOnAtom = false
+    })
     document.body.addEventListener('click', event => {
         if (!mouseOnAtom) {
             let newAtom = new Atom(event.clientX, event.clientY, selected)
