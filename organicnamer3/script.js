@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!mouseOnAtom) {
             let newAtom = new Atom(event.clientX, event.clientY, selected)
             mouseOnAtom = true
-            newAtom.element.addEventListener('mouseenter', () => {
+            newAtom.element.addEventListener('mouseover', () => {
                 mouseOnAtom = true
             })
-            newAtom.element.addEventListener('mouseleave', () => {
+            newAtom.element.addEventListener('mouseout', () => {
                 mouseOnAtom = false
             })
             newAtom.element.addEventListener('click', () => {
