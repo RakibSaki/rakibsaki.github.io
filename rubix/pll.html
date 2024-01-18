@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLL Dojo</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <button>regenerate</button>
+    </main>
+    <script>
+        let algorithm = parseInt(21 * Math.random())
+        let body = document.querySelector('main')
+        let images = []
+        for (let i = 1; i <= 21; i++) {
+            image = document.createElement('img')
+            image.setAttribute('src', `./friedrich-pll-${i < 10 ? '0' : ''}${i.toString()}.png`)
+            image.setAttribute('id', i.toString())
+            image.style.display = 'none'
+            body.appendChild(image)
+            images.push(image)
+        }
+        images[algorithm].style.display = 'block'
+        let button = document.querySelector('button')
+        button.addEventListener('click', e => {
+            e.preventDefault()
+            images[algorithm].style.display = 'none'
+            algorithm = parseInt(21 * Math.random())
+            images[algorithm].style.display = 'block'
+        })
+    </script>
+</body>
+</html>
