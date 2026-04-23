@@ -1,151 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakib Muhammed Saki | Portfolio</title>
-    <link rel="stylesheet" href="./reset.css">
-    <script src="https://kit.fontawesome.com/86b583929d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <title>Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Climate+Crisis:YEAR@1979&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Black Ops One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            padding-top: 20vh;
+            background-color: black;
+            color: white;
+            background-image: url('./flower.jpg');
+            background-size: auto 100vh;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            background-position: 0 0;
+            
+            /* Define our height and width variables */
+            --w: 100vw;
+            --h: 100vh;
+            width: var(--w);
+            height: var(--h);
+        }
+
+        /* Apply the logic when 1.2 * width < height */
+        @media (max-aspect-ratio: 5/4) {
+          body {
+            /* x = height - 1.2 * width */
+            --x: calc(var(--h) - (0.8 * var(--w)));
+            
+            /* Set position to -x, 0 */
+            background-position: calc(-0.7 * var(--x)) 0;
+          }
+        }
+        .time-value {
+            font-size: 3rem;
+            display: block;
+            font-weight: bold;
+        }
+        .label {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+        #message {
+            display: none;
+            font-size: 4rem;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-    <script>
-        document.body.innerHTML = 'lazy'
-    </script>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div id="back-black"></div>
-        <div id="back-color"></div>
-        <!-- introduction, home -->
-        <section id="home">
-            <div class="heading" id="web-dev-portfolio">
-                <h1 id="web-dev">WEB<br>DEV</h1>
-                <h1 id="portfolio">Portfolio</h1>
-            </div>
-            <div class="image">
 
-            </div>
-            <div class="heading" id="name">
-                <h1>Rakib<br>
-                    Muhammed<br>
-                    Saki</h1>
-            </div>
+    <div id="timer-container">
+        <span id="hours" class="time-value">00</span>
+        <span class="label">hours</span>
+        
+        <span id="minutes" class="time-value">00</span>
+        <span class="label">minutes</span>
+        
+        <span id="seconds" class="time-value">00</span>
+        <span class="label">seconds</span>
+        
+        <p style="font-size: 1.5rem;">to go</p>
+    </div>
 
-        </section>
-        <!-- projects, gigs -->
-        <section id="projects" class="quadruple">
-            <div class="heading">
-                <h2>Projects</h2>
-            </div>
-            <article>
-                <h3>Landing Pages</h3>
-                <p>beautifully designed web pages to give your product/brand the attention it deserves</p>
-                <ul>
-                    <li class="project-link"><a href="./tea-cozy.html" target="_blank">Tea Cozy</a></li>
-                    <li class="project-link"><a href="#" target="_blank">Photogenic</a></li>
-                </ul>
-            </article>
-            <article>
-                <h3>Single Page Applications</h3>
-                <p>concise powerful applications, be it simple or intricate, serving various purposes</p>
-                <ul>
-                    <li class="project-link"><a href="https://tourdeorbit.github.io/"
-                            target="_blank">tourdeorbit<span>an astrophysics project: orbit simulator for Kepler
-                                orbits</span></a></li>
-                    <li class="project-link"><a href="#" target="_blank">Story Reader<span>a pretty reader for a
-                                nice time</span></a></li>
-                    <li class="project-link"><a href="https://sakithesimple.github.io/" target="_blank">Saki the
-                            Simple<span>a silly, hopefully fun, site by a humble Potterhead</span></a></li>
-                </ul>
-            </article>
-            <article>
-                <h3>Full-stack Websites</h3>
-                <p>complete online environment to facilitate diverse operations</p>
-                <ul>
-                    <li class="project-link"><a href="#" target="_blank">Django Delights<span>an online inventory
-                                management system for restaurants</span></a></li>
-                    <li class="project-link"><a href="#" target="_blank">ToGather<span>just another social media
-                                platform</span></a></li>
-                </ul>
-            </article>
-        </section>
-        <section id="skills" class="quadruple">
-            <div class="heading">
-                <h2>Tools I'm experienced with</h2>
-            </div>
-            <article>
-                <h3>HTML, CSS & JavaScript</h3>
-                <p>the heart of first-hand web development</p>
-                <ul>
-                    <li class="project-link"><a href="#">Responsve Web Development Certification</a></li>
-                    <li class="project-link"><a href="#">Javascript Certification</a></li>
-                </ul>
-            </article>
-            <article>
-                <h3>Django Framework</h3>
-                <p>popular framework for rapidly creating robust applications</p>
-                <ul>
-                    <li class="project-link"><a href="#" target="_blank">Django Skill Path</a></li>
-                </ul>
-            </article>
-            <article>
-                <h3>Golang</h3>
-                <p>a modern programming language for creating any kind of software</p>
-                <ul>
-                    <li class="project-link"><a href="#" target="_blank">Golang Language Course</a></li>
-                    <li class="project-link"><a href="#" target="_blank">Go Basics Certification</a></li>
-                </ul>
-            </article>
-            <article id="certifications">
-                <h3>Alumni of / Certified by</h3>
-                <ul>
-                    <li><a href="https://www.codecademy.com/profiles/pyWhiz93876" target="_blank">Codecademy</a></li>
-                    <li><a href="https://www.freecodecamp.org/fcc1d49e3b1-ab8f-496d-ba36-19f8213439de"
-                            target="_blank">freeCodeCamp</a></li>
-                    <li><a href="https://www.hackerrank.com/rakib1saki" target="_blank">HackerRank</a></li>
-                </ul>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="heading">
-                <h2>Get in touch</h2>
-            </div>
-            <div id="subscribe">
-                <h3>Subscribe to receive updates on my latest work</h3>
-                <div id="email">
-                    <input type="email" placeholder="your email">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </div>
-            <div id="hire">
-                <h3><span id="hero">Hero for Hire</span>at</h3>
-                <div id="freelance-sites">
-                    <a href="#" id="upwork"></a>
-                    <a href="#" id="fiverr"></a>
-                </div>
-            </div>
-            <div id="collaborate">
-                <h3>Collaborate with or critique me <a href="github.com/rakibsaki" target="_blank"><i class="fab fa-github"></i>
-                        RakibSaki</a></h3>
-                <h3>Email: author@saki.media</h3>
-            </div>
-        </section>
-    </main>
-    <footer>Rakib Muhammed Saki | Portfolio</footer>
+    <div id="message">Do not disturb</div>
+
     <script>
-        document.body.innerHTML = 'lazy'
+        // Target: April 28, 2026, 12:00:00 GMT+6
+        // We define the target in UTC then adjust for the +6 offset
+        const targetDate = new Date('2026-04-28T12:00:00+06:00').getTime();
+
+        const updateTimer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // If the count down is finished
+            if (distance < 0) {
+                clearInterval(updateTimer);
+                document.getElementById("timer-container").style.display = "none";
+                document.getElementById("message").style.display = "block";
+                return;
+            }
+
+            // Time calculations for hours, minutes and seconds
+            // Note: Math.floor(distance / 3600000) gives total hours remaining
+            const hours = Math.floor(distance / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the results
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        }, 1000);
     </script>
 </body>
-
 </html>
